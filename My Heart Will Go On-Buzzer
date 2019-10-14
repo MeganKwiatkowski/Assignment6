@@ -1,0 +1,214 @@
+/*
+SparkFun Inventor’s Kit
+Circuit 2A - Buzzer
+
+Play notes using a buzzer connected to pin 10
+
+This sketch was written by SparkFun Electronics, with lots of help from the Arduino community.
+This code is completely free for any use.
+
+View circuit diagram and instructions at: https://learn.sparkfun.com/tutorials/sparkfun-inventors-kit-experiment-guide---v40
+Download drawings and code at: https://github.com/sparkfun/SIK-Guide-Code
+*/
+
+int speakerPin = 10;               //the pin that buzzer is connected to
+
+void setup()
+{
+  pinMode(speakerPin, OUTPUT);    //set the output pin for the speaker
+}
+
+void loop()
+{
+   
+  play('G', 5);       //Eve
+  play('G', 2);       //ry
+  play('G', 3);       //night
+  play('G', 2);       //in
+  play('F', 3);       //my
+  play('G', 2);       //dreams
+
+ play(' ', 2);       //pause for 2 beats
+
+  play('G', 2);       //I
+  play('F', 4);       //see
+  play('G', 3);       //you
+
+  play(' ', 1);       //pause for 1 beat
+  
+  play('A', 3);       //I
+  play('B', 4);       //feel
+  play('A', 2);       //you
+  
+  play(' ', 2);       //pause for 2 beats
+  
+  play('G', 4);       //That   
+  play('G', 2);       //is
+  play('G', 3);       //how
+  play('G', 2);       //I
+  play('F', 3);       //Know
+  play('G', 2);       //you
+  
+  play(' ', 2);       //pause for 2 beats
+  
+  play('G', 3);       //go 
+  play('D', 6);       //on
+
+  play(' ', 4);       //pause for 4 beats
+
+
+
+play('G', 4);       //Far
+  play('G', 2);       //acr
+  play('G', 3);       //oss
+  play('G', 2);       //the
+  play('F', 3);       //dis
+  play('G', 2);       //tance
+
+ play(' ', 2);       //pause for 2 beats
+
+  play('G', 2);       //and
+  play('F', 4);       //spac
+  play('G', 3);       //es
+
+  play(' ', 1);       //pause for 1 beat1
+  
+  play('A', 3);       //be
+  play('B', 4);       //tween
+  play('A', 2);       //us
+  
+  play(' ', 2);       //pause for 2 beats
+  
+  play('G', 4);       //You  
+  play('G', 2);       //have
+  play('G', 3);       //come
+  play('G', 2);       //to
+  play('F', 3);       //show
+  play('G', 2);       //you
+  
+  play(' ', 2);       //pause for 2 beats
+  
+  play('G', 3);       //go 
+  play('D', 6);       //on
+
+  play(' ', 4);       //pause for 4 beats
+  
+
+
+   play('G', 7);       //Near 
+  play('A', 7);       //Far
+  play('D', 4);       //Wher
+  play('H', 5);       //ev
+  play('I', 3);       //er
+  play('B', 2);       //you
+   play('A', 4);       //are
+   
+play(' ', 2);       //pause for 2 beats
+
+play('B', 3);       //I
+  play('C', 2);       //Be
+  play('B', 3);       //lieve
+  play('A', 4);       //that
+  play('G', 3);       //the
+  play('F', 2);       //heart
+ play('G', 4);       //does
+  play('F', 3);       //go
+  play('E', 6);       //on
+
+ play(' ', 4);       //pause for 4 beats
+
+   play('G', 7);       //Once
+  play('A', 7);       //More
+  play('D', 4);       //you
+  play('H', 5);       //o
+  play('I', 3);       //pened
+  play('B', 2);       //the 
+   play('A', 4);       //door
+   
+ play(' ', 1);       //pause for 1 beats
+   play('B', 3);       //And
+  play('C', 2);       //you're 
+  play('B', 3);       //here
+  play('A', 4);       //in
+  play('G', 3);       //my
+  play('F', 2);       //heart
+
+  
+ play('G', 4);       //and
+  play('F', 3);       //my
+  play('F', 2);       //heart
+ play('G', 4);       //will
+  play('A', 3);       //go
+  play('B', 5);       //on
+   play('A', 4);       //and
+  play('G', 14);       //on
+  
+ /* 
+  play('g', 2);       //ha
+  play('g', 1);       //ppy
+  play('G', 4);       //birth
+  play('E', 4);       //day
+  play('C', 4);       //dear
+  play('b', 4);       //your
+  play('a', 6);       //name
+
+  play(' ', 2);       //pause for 2 beats
+  
+  play('F', 2);       //ha
+  play('F', 1);       //ppy
+  play('E', 4);       //birth
+  play('C', 4);       //day
+  play('D', 4);       //to
+  play('C', 6);       //you   */
+  
+  while(true){}       //get stuck in this loop forever so that the song only plays once
+}
+
+
+void play( char note, int beats)
+{
+  int numNotes = 16;  // number of notes in our note and frequency array (there are 15 values, but arrays start at 0)
+  
+  //Note: these notes are C major (there are no sharps or flats)
+
+  //this array is used to look up the notes
+  char notes[] = { 'c', 'd', 'e', 'f', 'g', 'a', 'b', 'C', 'D', 'E', 'F', 'G', 'A', 'B', 'H', 'I', ' '};
+  //this array matches frequencies with each letter (e.g. the 4th note is 'f', the 4th frequency is 175)
+  int frequencies[] = {131, 147, 165, 175, 196, 220, 247, 262, 294, 330, 349, 392, 440, 494, 533, 499, 0};
+  
+  int currentFrequency = 0;    //the frequency that we find when we look up a frequency in the arrays
+  int beatLength = 150;   //the length of one beat (changing this will speed up or slow down the tempo of the song)
+
+  //look up the frequency that corresponds to the note
+  for (int i = 0; i < numNotes; i++)  // check each value in notes from 0 to 14
+  {
+    if (notes[i] == note)             // does the letter passed to the play function match the letter in the array?
+    {
+      currentFrequency = frequencies[i];   // Yes! Set the current frequency to match that note
+    }
+  }
+
+  //play the frequency that matched our letter for the number of beats passed to the play function
+  tone(speakerPin, currentFrequency, beats * beatLength);   
+  delay(beats* beatLength);   //wait for the length of the tone so that it has time to play
+  delay(50);                  //a little delay between the notes makes the song sound more natural
+
+}
+
+/* CHART OF FREQUENCIES FOR NOTES IN C MAJOR
+Note      Frequency (Hz)
+c        131
+d        147
+e        165
+f        175
+g        196
+a        220
+b        247
+C        262
+D        294
+E        330
+F        349
+G        392
+A        440
+B        494
+*/
